@@ -7,10 +7,10 @@ import java.util.Optional;
 
 import static java.util.stream.Collectors.*;
 
-public class CitiesProcessor {
+public class CityService {
     private final List<City> cities;
 
-    public CitiesProcessor(List<City> cities) {
+    public CityService(List<City> cities) {
         this.cities = cities;
     }
 

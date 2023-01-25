@@ -14,16 +14,16 @@ public class Main {
         //var path = Path.of(args[0]);
         CityParser parser = new CityCsvParser();
         List<City> cities = parser.parseLinesFrom(readAllNoEmptyLines(path));
-        CitiesProcessor processor = new CitiesProcessor(cities);
+        CityService cityService = new CityService(cities);
 
 
-        processor.getCities(caseInsensitiveSortingByName).forEach(System.out::println);
+        cityService.getCities(caseInsensitiveSortingByName).forEach(System.out::println);
 
-        processor.getCities(sortingByDistrictAndName).forEach(System.out::println);
+        cityService.getCities(sortingByDistrictAndName).forEach(System.out::println);
 
-        processor.getCityWithMaxPopulation().ifPresent(System.out::println);
+        cityService.getCityWithMaxPopulation().ifPresent(System.out::println);
 
-        processor.getNumberOfCitiesInEachRegion().entrySet().forEach(System.out::println);
+        cityService.getNumberOfCitiesInEachRegion().entrySet().forEach(System.out::println);
 
 
     }
